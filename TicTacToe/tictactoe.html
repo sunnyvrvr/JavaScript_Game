@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/TicTacToe/styles/style.css">
     <link rel="stylesheet" href="/TicTacToe/styles/overlays.css">
     <link rel="stylesheet" href="/TicTacToe/styles/configuration.css">
+    <link rel="stylesheet" href="/TicTacToe/styles/game.css">
 </head>
 <body>
     <div id="backdrop"></div>
@@ -26,7 +27,7 @@
                     <input type="text" name="playername" id="playername" />
                 </div>
                 <div>
-                    <button type="button" class="btn btn-alt">Cancel</button>
+                    <button type="button" class="btn btn-alt" id="cancel-config-button">Cancel</button>
                     <button type="submit" class="btn">Confirm</button>
                 </div>
             </form>
@@ -54,21 +55,21 @@
             <button class="btn">Start New Game</button>
         </section>
         <section id="active-game">
-            <article>
-                <h3>You won!</h3>
+            <article id="game-over">
+                <h3>You won <span id="winner-name">PLAYER NAME</span>!</h3>
                 <p>Click "Start New Game" above, to start a new game!</p>
             </article>
-            <p>It's your turn <span id="acitve-player-game">PLAYER NAME</span>!</p>
-            <ol>
+            <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
+            <ol id="game-board">
+                <li class="disabled">X</li>
                 <li></li>
-                <li></li>
-                <li></li>
+                <li class="disabled">0</li>
 
                 <li></li>
-                <li></li>
+                <li class="disabled">X</li>
                 <li></li>
 
-                <li></li>
+                <li class="disabled">O</li>
                 <li></li>
                 <li></li>
             </ol>
