@@ -1,4 +1,5 @@
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+    editedPlayer = +event.target.dataset.playerid; //+'1' => 1
     playerConfigOverlayElement.style.display = 'block';
     backdropElement.style.display = 'block';
 }
@@ -21,4 +22,7 @@ function savePlayerConfig(event) {
         return;
     }
 
+    const updatedPlayerDataElement = document.getElementById('player-' + editedPlayer + '-data');
+    updatedPlayerDataElement.children[1].textContent = enteredPlayername;
+    
 }
