@@ -5,3 +5,7 @@ function startNewGame() {
     }
     gameAreaElement.style.display = 'block';
 }
+
+function selectGameField(event) {
+    event.target.textContent = players[activePlayer].symbol; //players[0]
+}
