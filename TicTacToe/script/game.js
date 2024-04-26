@@ -20,8 +20,15 @@ function selectGameField(event) {
     if(event.target.tagName !== 'LI'){
         return;
     } 
+    const selectedField = event.target;
 
-    event.target.textContent = players[activePlayer].symbol; //players[0]
-    event.target.classList.add('disabled');
+    selectedField.textContent = players[activePlayer].symbol; //players[0]
+    selectedField.classList.add('disabled');
+
+    const selectedColumn = selectedField.dataset.col -1;
+    const selectedRow = selectedField.dataset.row -1;
+
+    gameData[selectedRow][selectedColumn] = activePlayer + 1;
+    console.log(gameData);
     switchPlayer();
 }
