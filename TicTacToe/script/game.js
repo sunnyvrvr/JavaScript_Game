@@ -20,13 +20,17 @@ function selectGameField(event) {
     if(event.target.tagName !== 'LI'){
         return;
     } 
-    const selectedField = event.target;
+    const selectedField = event.target;   
+    const selectedColumn = selectedField.dataset.col -1;
+    const selectedRow = selectedField.dataset.row -1;
+
+    if (gameData[selectedRow][selectedColumn] > 0) {
+        alert('Please selecet an empty field!');
+        return;
+    }
 
     selectedField.textContent = players[activePlayer].symbol; //players[0]
     selectedField.classList.add('disabled');
-
-    const selectedColumn = selectedField.dataset.col -1;
-    const selectedRow = selectedField.dataset.row -1;
 
     gameData[selectedRow][selectedColumn] = activePlayer + 1;
     console.log(gameData);
