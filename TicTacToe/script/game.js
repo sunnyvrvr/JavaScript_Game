@@ -36,3 +36,12 @@ function selectGameField(event) {
     console.log(gameData);
     switchPlayer();
 }
+
+/* 게임이 승리하는 경우의 수 */ 
+function checkForGameOver() {
+    if (gameData[0][0] > 0 && 
+        gameData[0][1] ===  gameData[0][1] && 
+        gameData[0][1] ===  gameData[0][2]){
+        return gameData[0][0];
+    } 
+}
